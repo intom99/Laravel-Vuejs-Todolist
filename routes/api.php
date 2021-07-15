@@ -17,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/todolist', 'TodolistsController@index');
+Route::post('/todolist', 'TodolistsController@store');
+Route::post('/todolist/{id}', 'TodolistsController@update');
+Route::get('/todolist/{id}', 'TodolistsController@destroy');
